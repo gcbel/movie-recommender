@@ -1,0 +1,53 @@
+/* GLOBAL */
+:root {
+    --background: black;
+    --text: white;
+    --clear: rgba(0, 0, 0, 0);
+}
+
+* {
+    color: var(--text);
+    text-align: center;
+}
+
+html {
+    background-color: black;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: black;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+}
+
+nav button {
+    margin: 0px 5px 0px 5px;
+}
+
+/* HEADERS */
+h1 {
+    font-size: 60px;
+}
+
+/* BUTTONS */
+button {
+    padding: 6px 10px 6px 10px;
+    border: 1px solid white;
+    background-color: var(--clear);
+}
+
+/* IMAGES */
+#main-img {
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    size: cover;
+    overflow: hidden;
+}
