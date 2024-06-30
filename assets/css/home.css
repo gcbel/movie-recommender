@@ -8,46 +8,116 @@
 * {
     color: var(--text);
     text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
 }
 
 html {
     background-color: black;
 }
 
+body {
+    background-color: var(--clear);
+}
+
+.page {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* FONTS */
+.public-sans {
+    font-family: "Public Sans", sans-serif;
+    font-style: normal;
+    letter-spacing: -1.8px;
+}
+
 /* NAVIGATION */
 nav {
-    background-color: black;
+    background-color: var(--clear);
     position: -webkit-sticky;
     position: sticky;
-    top: 0px;
-    right: 0px;
-    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    top: 20px;
+    margin: 20px 20px 0px 0px;
+    min-width: 270px;
 }
 
 nav button {
-    margin: 0px 5px 0px 5px;
-}
-
-/* HEADERS */
-h1 {
-    font-size: 60px;
-}
-
-/* BUTTONS */
-button {
-    padding: 6px 10px 6px 10px;
-    border: 1px solid white;
     background-color: var(--clear);
+    padding: 6px 6px 6px 6px;
+    margin: 0px 0px 0px 10px;
+    border: 0px;
+}
+
+/* FIRST PAGE */
+#first-page {
+    padding: 25vh 20px 60vh 20px;
+    display: grid;
+    place-items: center;
+    height: 95vh;
+}
+
+#first-page button {
+    font-size: calc(1vw + 25px);
+    margin: 25vh 0px 0px 0px;
+    padding: 6px 20px 6px 20px;
+    background-color: var(--clear);
+    border: 0px;
+}
+
+h1 {
+    font-size: calc(5vw + 30px);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: calc(1vw + 20px);
+    font-weight: 250;
+    padding: 0px 30px 0px 30px;
+}
+
+/* SECOND PAGE */
+main {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0px 5vw 0px 5vw;
+}
+
+.main-btn-div {
+    width: calc(30vw);
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-btn {
+    font-size: calc(3vw + 20px);
+    font-weight: 600;
+    background-color: var(--clear);
+    border: 0px;
 }
 
 /* IMAGES */
 #main-img {
     z-index: -1;
+    position: fixed;
     top: 0px;
     left: 0px;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
-    size: cover;
-    overflow: hidden;
+    min-width: 300px;
+    object-fit: cover;
+    opacity: 70%;
+    filter: blur(2px);
+}
+
+@media (min-width: 447px) {
+    nav button {
+        padding: 6px 15px 6px 15px;
+        margin: 0px 10px 0px 10px;
+        border: 1px solid white;
+    }
 }
