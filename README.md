@@ -12,6 +12,8 @@ N/A
 
 ## Credits
 
+Guide on scrolling animations: https://blog.hubspot.com/website/css-fade-in#scroll-transition <br>
+
 ## License
 
 [MIT License](https://opensource.org/license/mit)

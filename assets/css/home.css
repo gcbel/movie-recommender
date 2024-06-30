@@ -59,12 +59,12 @@ nav button {
     height: 95vh;
 }
 
-#first-page button {
+#start {
     font-size: calc(1vw + 25px);
     margin: 25vh 0px 0px 0px;
     padding: 6px 20px 6px 20px;
     background-color: var(--clear);
-    border: 0px;
+    border: 1px solid white;
 }
 
 h1 {
@@ -82,13 +82,15 @@ h2 {
 main {
     background-color: black;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
     flex-wrap: wrap;
     padding: 0px 5vw 0px 5vw;
 }
 
 .main-btn-div {
-    width: calc(30vw);
+    width: 25vw;
     display: flex;
     justify-content: space-around;
 }
@@ -114,10 +116,42 @@ main {
     filter: blur(2px);
 }
 
+/* TABLET */
 @media (min-width: 447px) {
     nav button {
         padding: 6px 15px 6px 15px;
         margin: 0px 10px 0px 10px;
         border: 1px solid white;
     }
+}
+
+/* DESKTOP */
+@media (min-width: 600px) {
+    main {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* EFFECTS */
+.hidden {
+    opacity: 0;
+}
+
+.fade-in, .fade-in-late { 
+    opacity: 0;
+}
+
+.fade-in { 
+    animation: fadeIn 1s ease-in-out forwards; 
+}
+
+.fade-in-late {
+    animation: fadeIn 1s ease-in-out forwards; 
+    animation-delay: 1s; 
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
