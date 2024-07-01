@@ -18,30 +18,45 @@ function appearOnScroll() {
         if (elemTop < pageBottom) {
             elem.classList.add("fade-in");
         } else {
-            elem.classList.remove("fade-in"); // Remove fade-in class if scrolling away
+            elem.classList.remove("fade-in");
         }
     });
 }
 
 /* Make second page background images appear on hover */
-function display(picture) {
-    if (picture === "rate") {
-        exploreImg.classList.add("hidden")
-        rateImg.classList.remove("hidden")
-        recsImg.classList.add("hidden")
-    } else if (picture === "explore") {
-        exploreImg.classList.remove("hidden")
-        rateImg.classList.add("hidden")
-        recsImg.classList.add("hidden")
-    } else if (picture === "recs") {
-        exploreImg.classList.add("hidden")
-        rateImg.classList.add("hidden")
-        recsImg.classList.remove("hidden")
+function display(newImg) {
+    const curImg = localStorage.getItem("secondPgImg") || ""
+
+    if (curImg === newImg) {  // Do nothing if same selection
+        return;
+    }
+
+    if (curImg === "rate") {
+        rateImg.classList.remove("fade-quick")
+        rateImg.classList.add("fade-out")
+    } else if (curImg === "explore") {
+        exploreImg.classList.remove("fade-quick")
+        exploreImg.classList.add("fade-out")
+    } else if (curImg === "recs") {
+        recsImg.classList.remove("fade-quick")
+        recsImg.classList.add("fade-out")
+    }
+
+    localStorage.setItem("secondPgImg", newImg)
+    if (newImg === "rate") {
+        rateImg.classList.remove("fade-out")
+        rateImg.classList.add("fade-quick")
+    } else if (newImg === "explore") {
+        exploreImg.classList.remove("fade-out")
+        exploreImg.classList.add("fade-quick")
+    } else if (newImg === "recs") {
+        recsImg.classList.remove("fade-out")
+        recsImg.classList.add("fade-quick")
     }
 }
 
 /* INITIALIZERS */
 window.addEventListener("scroll", appearOnScroll);
-rateBtn.addEventListener("mouseover", display("rate"));
+rateBtn.addEventListener("mouseover",function() { display("rate"); });
 exploreBtn.addEventListener("mouseover", function() { display("explore"); });
-recsBtn.addEventListener("mouseover", display("recs"));
+recsBtn.addEventListener("mouseover", function() { display("recs"); });

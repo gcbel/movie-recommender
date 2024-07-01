@@ -1,8 +1,4 @@
 /* EFFECTS */
-.hidden {
-    display: none;
-}
-
 .fade-in, .fade-in-late { 
     opacity: 0;
 }
@@ -11,12 +7,25 @@
     animation: fadeIn 1s ease-in-out forwards; 
 }
 
-.fade-in-late {
+.fade-quick {
+    animation: fadeIn 500ms ease-in-out forwards; 
+}
+
+.fade-late {
     animation: fadeIn 1s ease-in-out forwards; 
     animation-delay: 1s; 
+}
+
+.fade-out {
+    animation: fadeOut 500ms ease-in-out; 
 }
 
 @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
 }

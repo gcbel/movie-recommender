@@ -127,11 +127,12 @@ h2 {
     width: 100vw;
     min-width: 300px;
     object-fit: cover;
-    opacity: 70%;
+    opacity: 0%;
     filter: blur(2px);
 }
 
 .second-page-btns {
+    z-index: 1;
     height: 100%;
     width: 100%;
     display: flex;
