@@ -10,10 +10,8 @@ function appearOnScroll() {
     allFading.forEach(function(elem) {
         var elemTop = elem.getBoundingClientRect().top + window.scrollY;
         if (elemTop < pageBottom) {
-            // elem.classList.remove("hidden");
             elem.classList.add("fade-in");
         } else {
-            // elem.classList.add("hidden");
             elem.classList.remove("fade-in"); // Remove fade-in class if scrolling away
         }
     });
