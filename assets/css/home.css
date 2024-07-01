@@ -22,6 +22,7 @@ body {
 .page {
     height: 100vh;
     width: 100vw;
+    min-width: 300px;
 }
 
 /* FONTS */
@@ -58,6 +59,7 @@ body {
 
 /* NAVIGATION */
 nav {
+    z-index: 1;
     background-color: var(--clear);
     position: -webkit-sticky;
     position: sticky;
@@ -113,12 +115,23 @@ h2 {
 }
 
 /* SECOND PAGE */
-main {
+#second-page {
     background-color: black;
-    padding: 0px 5vw 0px 5vw;
+    padding: 0px 0px 0px 0px;
 }
 
-.main-btns {
+.second-page-img {
+    display: block;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    min-width: 300px;
+    object-fit: cover;
+    opacity: 70%;
+    filter: blur(2px);
+}
+
+.second-page-btns {
     height: 100%;
     width: 100%;
     display: flex;
@@ -126,35 +139,39 @@ main {
     justify-content: space-evenly;
     align-content: center;
     flex-wrap: wrap;
-    padding: 5% 0px 5% 0px;
+    padding: 5% 5vw 5% 5vw;
 }
 
-.main-btn-div {
+.second-page-btn-div {
     width: 30vw;
     display: flex;
     justify-content: center;
 }
 
-.main-btn {
-    font-size: calc(4vw + 20px);
+.second-page-btn {
+    font-size: calc(4vw + 40px);
     font-weight: 600;
     background-color: var(--clear);
     border: 0px;
 }
 
-.main-btn:hover {
+.second-page-btn:hover {
     border-bottom: 1px solid white;
 }
 
 /* TABLETS */
 @media (min-width: 600px) {
-    .main-btns {
+    .second-page-btns {
         flex-direction: row;
         justify-content: center;
     }
 
-    .main-btn-div {
+    .second-page-btn-div {
         justify-content: space-around;
+    }
+
+    .second-page-btn {
+        font-size: calc(4vw + 20px);
     }
 
     #vault, #about-us {
@@ -172,11 +189,11 @@ main {
 
 /* DESKTOPS */
 @media (min-width: 800px) {
-    .main-btns {
+    .second-page-btns {
         padding: 5% 5% 5% 5%;
     }
 
-    .main-btn-div {
+    .second-page-btn-div {
         width: 27vw;
     }
 }
