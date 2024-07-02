@@ -1,5 +1,6 @@
 /* VARIABLES */
 const allFading = document.querySelectorAll(".fading")
+const startBtn = document.querySelector("#start")
 const rateBtn = document.querySelector("#rate")
 const exploreBtn = document.querySelector("#explore")
 const recsBtn = document.querySelector("#recs")
@@ -23,6 +24,10 @@ function appearOnScroll() {
     });
 }
 
+function scrollPage() {
+    recsBtn.scrollIntoView({ behavior: 'smooth' });
+}
+
 /* Make second page background images appear on hover */
 function display(newImg) {
     const curImg = localStorage.getItem("secondPgImg") || ""
@@ -32,31 +37,32 @@ function display(newImg) {
     }
 
     if (curImg === "rate") {
-        rateImg.classList.remove("fade-quick")
-        rateImg.classList.add("fade-out")
+        rateImg.classList.remove("fade-in-img")
+        rateImg.classList.add("fade-out-img")
     } else if (curImg === "explore") {
-        exploreImg.classList.remove("fade-quick")
-        exploreImg.classList.add("fade-out")
+        exploreImg.classList.remove("fade-in-img")
+        exploreImg.classList.add("fade-out-img")
     } else if (curImg === "recs") {
-        recsImg.classList.remove("fade-quick")
-        recsImg.classList.add("fade-out")
+        recsImg.classList.remove("fade-in-img")
+        recsImg.classList.add("fade-out-img")
     }
 
     localStorage.setItem("secondPgImg", newImg)
     if (newImg === "rate") {
-        rateImg.classList.remove("fade-out")
-        rateImg.classList.add("fade-quick")
+        rateImg.classList.remove("fade-out-img")
+        rateImg.classList.add("fade-in-img")
     } else if (newImg === "explore") {
-        exploreImg.classList.remove("fade-out")
-        exploreImg.classList.add("fade-quick")
+        exploreImg.classList.remove("fade-out-img")
+        exploreImg.classList.add("fade-in-img")
     } else if (newImg === "recs") {
-        recsImg.classList.remove("fade-out")
-        recsImg.classList.add("fade-quick")
+        recsImg.classList.remove("fade-out-img")
+        recsImg.classList.add("fade-in-img")
     }
 }
 
 /* INITIALIZERS */
 window.addEventListener("scroll", appearOnScroll);
+startBtn.addEventListener('click', scrollPage);
 rateBtn.addEventListener("mouseover",function() { display("rate"); });
 exploreBtn.addEventListener("mouseover", function() { display("explore"); });
 recsBtn.addEventListener("mouseover", function() { display("recs"); });
