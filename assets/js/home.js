@@ -64,5 +64,6 @@ function display(newImg) {
 window.addEventListener("scroll", appearOnScroll);
 startBtn.addEventListener('click', scrollPage);
 rateBtn.addEventListener("mouseover",function() { display("rate"); });
+rateBtn.addEventListener('click', scrollPage);
 exploreBtn.addEventListener("mouseover", function() { display("explore"); });
 recsBtn.addEventListener("mouseover", function() { display("recs"); });

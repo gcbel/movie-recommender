@@ -85,7 +85,7 @@ nav button {
 
 /* FIRST PAGE */
 #first-page {
-    padding: 0px 20px 0px 20px;
+    padding: 0px 34px 0px 34px;
     display: grid;
     place-items: center;
     height: 95vh;
@@ -96,13 +96,13 @@ h1 {
     font-weight: 700;
     margin: 0px;
     line-height: 0.8;
-    padding: 31vh 0px 0px 0px;
+    padding: 6.5vh 0px 20vh 0px;
 }
 
 h2 {
     font-size: calc(1vw + 20px);
     font-weight: 250;
-    padding: 0px 20px calc(20vh + 30px) 20px;
+    padding: 24vh 20px 0px 20px;
 }
 
 #start {
@@ -112,7 +112,7 @@ h2 {
     background-color: var(--clear);
     border: 1px solid white;
     padding: 6px 20px 6px 20px;
-    margin: 0px 0px 10vh 0px;
+    margin: 10px 0px 8vh 0px;
 }
 
 /* SECOND PAGE */
@@ -140,7 +140,7 @@ h2 {
     justify-content: space-evenly;
     align-content: center;
     flex-wrap: wrap;
-    padding: 5% 5vw 5% 5vw;
+    padding: 20% 5vw 20% 5vw;
 }
 
 .second-page-btn-div {
@@ -158,6 +158,25 @@ h2 {
 
 .second-page-btn:hover {
     border-bottom: 1px solid white;
+}
+
+/* NON-MOBILE */
+@media (min-width: 500px) {
+    #first-page {
+        padding: 0px 20px 0px 20px;
+    }
+
+    h1 {
+        padding: 31vh 0px 0px 0px;
+    }
+
+    h2 {
+        padding: 0px 20px calc(20vh + 30px) 20px;
+    }
+
+    #start {
+        margin: 0px 0px 10vh 0px;
+    }
 }
 
 /* TABLETS */
