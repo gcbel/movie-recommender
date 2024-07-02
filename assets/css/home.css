@@ -1,48 +1,3 @@
-/* GLOBAL */
-:root {
-    --background: black;
-    --text: white;
-    --clear: rgba(0, 0, 0, 0);
-}
-
-* {
-    color: var(--text);
-    text-align: center;
-}
-
-html {
-    background-color: black;
-}
-
-
-body {
-    background-color: var(--clear);
-}
-
-.page {
-    height: 100vh;
-    width: 100vw;
-    min-width: 300px;
-}
-
-/* FONTS */
-.public-sans {
-    font-family: "Public Sans", sans-serif;
-    font-style: normal;
-}
-
-.playfair {
-    font-family: "Playfair", serif;
-    font-optical-sizing: auto;
-    font-variation-settings: "wdth" 100;
-}
-
-.montserrat {
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-    font-style: normal;
-}
-
 /* BACKGROUND */
 #background-img {
     z-index: -1;
@@ -57,38 +12,12 @@ body {
     filter: blur(2px);
 }
 
-/* NAVIGATION */
-nav {
-    z-index: 1;
-    background-color: var(--clear);
-    position: -webkit-sticky;
-    position: sticky;
-    display: flex;
-    justify-content: flex-end;
-    top: 20px;
-    margin: 20px 20px 0px 0px;
-    min-width: 270px;
-}
-
-nav button {
-    background-color: var(--clear);
-}
-
-#vault, #about-us {
-    display: none;
-}
-
-#menu {
-    border: 0px;
-    font-size: 24px;
-}
-
 /* FIRST PAGE */
 #first-page {
     padding: 0px 34px 0px 34px;
     display: grid;
     place-items: center;
-    height: 95vh;
+    height: 100vh;
 }
 
 h1 {
@@ -96,13 +25,13 @@ h1 {
     font-weight: 700;
     margin: 0px;
     line-height: 0.8;
-    padding: 6.5vh 0px 20vh 0px;
+    padding: 15vh 0px 20vh 0px;
 }
 
 h2 {
     font-size: calc(1vw + 20px);
     font-weight: 250;
-    padding: 24vh 20px 0px 20px;
+    padding: 25vh 20px 0px 20px;
 }
 
 #start {
@@ -110,14 +39,14 @@ h2 {
     font-size: calc(1vw + 20px);
     letter-spacing: -1.8px;
     background-color: var(--clear);
-    border: 1px solid white;
+    border: 1px solid var(--text);
     padding: 6px 20px 6px 20px;
     margin: 10px 0px 8vh 0px;
 }
 
 /* SECOND PAGE */
 #second-page {
-    background-color: black;
+    background-color: var(--background);
     padding: 0px 0px 0px 0px;
 }
 
@@ -140,7 +69,7 @@ h2 {
     justify-content: space-evenly;
     align-content: center;
     flex-wrap: wrap;
-    padding: 20% 5vw 20% 5vw;
+    padding: 30% 5vw 30% 5vw;
 }
 
 .second-page-btn-div {
@@ -157,7 +86,12 @@ h2 {
 }
 
 .second-page-btn:hover {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--text);
+}
+
+/* THIRD PAGE */
+#third-page {
+    background-color: var(--background);
 }
 
 /* NON-MOBILE */
@@ -192,18 +126,6 @@ h2 {
 
     .second-page-btn {
         font-size: calc(4vw + 20px);
-    }
-
-    #vault, #about-us {
-        display: inline;
-        font-size: 16px;
-        padding: 6px 15px 6px 15px;
-        margin: 0px 10px 0px 10px;
-        border: 1px solid white;
-    }
-
-    #menu {
-        display: none;
     }
 }
 

@@ -1,0 +1,147 @@
+/* GLOBAL */
+:root {
+    --background: black;
+    --text: white;
+    --clear: rgba(0, 0, 0, 0);
+}
+
+* {
+    color: var(--text);
+    text-align: center;
+}
+
+html {
+    background-color: var(--background);
+}
+
+
+body {
+    background-color: var(--clear);
+}
+
+.page {
+    height: 100vh;
+    width: 100vw;
+    min-width: 300px;
+}
+
+/* NAVIGATION */
+nav {
+    z-index: 1;
+    background-color: var(--clear);
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    justify-content: flex-end;
+    top: 20px;
+    margin: 20px 20px 0px 0px;
+    min-width: 270px;
+}
+
+nav button {
+    background-color: var(--clear);
+}
+
+#vault, #about-us {
+    display: none;
+}
+
+#menu {
+    border: 0px;
+    font-size: 24px;
+}
+
+/* LINKS */
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--text);
+}
+
+/* FONTS */
+.public-sans {
+    font-family: "Public Sans", sans-serif;
+    font-style: normal;
+}
+
+.playfair {
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
+}
+
+.montserrat {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+}
+
+/* SNAP SCROLLING */
+html {
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+.page {
+    scroll-snap-align: start;
+}
+
+/* FADING */
+.fade-in { 
+    animation: fadeIn 1s ease-in-out forwards; 
+}
+
+.fade-in-img {
+    animation: fadeInImg 500ms ease-in-out forwards; 
+}
+
+.fade-late {
+    animation: fadeIn 1s ease-in-out forwards; 
+    animation-delay: 1s; 
+}
+
+.fade-out-img {
+    animation: fadeOutImg 500ms ease-in-out; 
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeInImg {
+    0% {opacity: 0;}
+    100% {opacity: 0.6;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes fadeOutImg {
+    0% {opacity: 0.6;}
+    100% {opacity: 0;}
+}
+
+/* TABLETS */
+@media (min-width: 600px) {
+    #vault, #about-us {
+        display: inline;
+        font-size: 16px;
+        padding: 6px 15px 6px 15px;
+        margin: 0px 10px 0px 10px;
+        border: 1px solid var(--text);
+    }
+
+    #menu {
+        display: none;
+    }
+}
